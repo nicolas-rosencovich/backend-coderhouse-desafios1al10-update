@@ -1,0 +1,24 @@
+[
+    {
+    "id":"1",
+    "title":"Saxo tenor",
+    "description":"Saxo tenor Selmer Paris",
+    "price":"3590",
+    "thumbnails":["imagen.ejemplo.com","imagen.ejemplo.com"],
+    "code":"123",
+    "categoy":"Saxofones",
+    "status":false
+
+},
+{
+    "id":"2",
+    "title":"Saxo tenor",
+    "description":"Saxo tenor yamaha",
+    "price":"2330",
+    "thumbnails":"",
+    "code":"1234",
+    "categoy":"Saxofones",
+    "status":true
+
+}
+]

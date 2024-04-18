@@ -1,0 +1,64 @@
+<div>
+    <h1>Solucion del quinto desafío</h1>
+
+    <h3>Lista de productos</h3>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Price</th>
+                <th>Thumbnails</th>
+                <th>Code</th>
+                <th>Category</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{!-- Un each a cada producto de mi product--}}
+            {{#each productos}}
+            <tr>
+                  <td>{{this.id}}</td>
+                  <td>{{this.title}}</td>
+                  <td>{{this.description}}</td>
+                  <td>{{this.price}}</td>
+
+                 {{!--  <td>{{this.thumbnail}}</td> --}}
+
+                 {{!-- THUMBNAIL --}}
+                 <td>
+                  {{#if this.thumbnails.length}}
+                  <a href="{{this.thumbnails.length.[0]}}"   target="_blank" >{{this.thumbnails.lenght.[0]}}</a>
+                  {{else}}
+                  No hay imagen disponible
+                  {{/if}}
+
+                 </td>
+
+
+
+                  <td>{{this.code}}</td>
+                  <td>{{this.categoy}}</td>
+
+                 {{!--  <td>{{this.status}}</td> --}}
+
+                {{!-- STATUS --}}
+                {{!-- Envés de realizar un estado que de valor bool hice un condicional el cual devuelve dos string según su state --}}
+                {{!--Esta es la sintaxis que se utiliza en handle para poder hacer una especie de ifnot???    
+                {{#unless ....}} {{/unless}}  --}}  
+                  <td>
+                 {{#unless this.status}}
+                 Ups, no disponible
+                 {{/unless}}
+                 Disponible
+                  </td>
+
+
+
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</div>

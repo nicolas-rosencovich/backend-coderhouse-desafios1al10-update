@@ -50,6 +50,3 @@ socketServer.on("connection", socket=>{
 
 
 
-/* PARA USAR DSP
-  <script src="/socket.io/socket.io.js"></script>
-  <script src="/js/index.js"></script> */

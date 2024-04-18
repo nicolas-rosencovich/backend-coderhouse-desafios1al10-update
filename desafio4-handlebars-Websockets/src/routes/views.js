@@ -7,7 +7,7 @@ router.get("/", (req, res) => {
     const p = new ProductManager();
     p.getProducts()
         .then(productos => {
-            console.log({productos});
+
             return res.render("home", {productos});
         })
         .catch(error => {

@@ -1,13 +1,15 @@
 import fs from 'fs/promises';
 import { v4 as uuidv4 } from 'uuid';
 import __dirname from './utils.js';
+import path from 'path';
 
 export class ProductManager {
     constructor() {
-        this.path ="products.json";
+        this.path = path.resolve("products.json");
         this.products = [];
     }
 
+    
     async addProduct({ title, description, price, thumbnail, code, stock, stat, category }) {
         let id = uuidv4();
         let newProduct = { id, title, description, price, thumbnail, code, stock, stat, category };

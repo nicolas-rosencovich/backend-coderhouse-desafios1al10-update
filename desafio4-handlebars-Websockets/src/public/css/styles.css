@@ -1,0 +1,37 @@
+body{
+  
+    background-color: #8BC6EC;
+    background-image: linear-gradient(135deg, #8BC6EC 0%, #9599E2 100%);
+    
+    
+}
+
+*{
+    font-size: 1rem;
+    color: white;
+   
+}
+
+table{
+    border:2px solid white;
+ 
+   width: 90%;
+   padding: 2px;
+   
+   
+}
+
+
+th{
+  font-size: 1.5rem;
+  border-bottom: 2px solid white;
+   
+
+   
+    
+}
+
+
+td{
+    justify-content: space_around;
+}

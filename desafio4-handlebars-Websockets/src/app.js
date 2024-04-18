@@ -4,8 +4,8 @@ import {Server} from  "socket.io";
 import {engine} from "express-handlebars";
 import __dirname from './utils.js';
 
-import { ProductManager } from './productManager.js';
-import { CartManager } from './dao/cartManager.js'; // Asegúrate de tener la ruta correcta
+import { ProductManager}  from './productManager.js';
+import { CartManager } from './dao/cartManager.js'; 
 import { productsRouter } from "./routes/products.router.js";
 import { cartsRouter } from "./routes/cart.router.js";
 import views from "./routes/views.js"
@@ -18,6 +18,8 @@ const app = express();
 export const productManager = new ProductManager();
 export const cartManager = new CartManager(); // Exporta el cartManager correctamente
 
+
+const p = new ProductManager()
 
 app.use("/", views)
 app.use("/api/products", productsRouter);
@@ -40,12 +42,20 @@ const expressServer = app.listen(PORT, () => {
     console.log(`Server escuchando en puerto ${PORT}`);
 });
 
+
 const socketServer = new Server(expressServer)
 
 
-socketServer.on("connection", socket=>{
-    console.log("Cliente conectado desde front")
-})
+
+socketServer.on("connection", async (socket) => {
+    console.log("Cliente conectado desde front");
+    try {
+        const productos = await p.getProducts();
+        socket.emit("productos", productos);
+    } catch (error) {
+        console.error("Error al obtener los productos:", error);
+    }
+});
 
 
 

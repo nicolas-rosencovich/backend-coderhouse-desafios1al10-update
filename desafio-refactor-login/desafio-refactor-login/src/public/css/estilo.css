@@ -1,0 +1,501 @@
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif; /* Using a clean, modern font */
+  }
+  
+  body {
+    width: 100%;
+    font-size: 16px; /* Base font size for the entire page */
+    background-color: #000; /* Deep black background */
+    color: #fff; /* White text for readability */
+  }
+  
+  h1 {
+    line-height: 8vh;
+    text-align: center;
+    margin: 2vh auto;
+    padding: 0px 25px;
+    font-size: clamp(2rem, 3vw, 2.5rem); /* Responsive font size */
+    background: linear-gradient(to right, #00f, #f00); /* Gradient background with neon colors */
+    border-radius: 10px; /* Rounded corners for a sleek look */
+    animation: blink 2s infinite alternate; /* Neon-like blinking animation */
+  }
+  
+  @keyframes blink {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0.5;
+    }
+  }
+  
+  h2 {
+    line-height: 30px;
+    color: #fff;
+    text-align: center;
+    text-shadow: 0px 0px 5px #00fff0; /* Neon text shadow */
+  }
+  
+  h3 {
+    background-color: #222; /* Darker background for headings */
+    display: block;
+    border-radius: 5px;
+    font-size: 16px;
+    line-height: 32px;
+    text-shadow: 0px 0px 2px #0f0; /* Subtle neon text shadow */
+  }
+  
+  a {
+    text-decoration: none;
+    color: #00fff0; /* Neon link color */
+  }
+  
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+header ul, footer ul {
+    margin: 0px;
+    display: flex;
+    flex-direction: row;
+}
+
+header {
+    width: 100%;
+    height: auto;
+    margin: 0px;
+    padding: 0px;
+    display: flex; /* Changed from block to flex for better layout control */
+    overflow: hidden;
+    background-color: transparent; /* Removed background color for a more layered effect */
+  }
+  
+  #PreHeader {
+    width: 100%;
+    height: 30px;
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    justify-content: end;
+    overflow: hidden;
+    background-color: transparent; /* Removed background color for a more layered effect */
+  }
+
+  #PreHeader ul {
+    width: auto;
+    height: auto;
+    margin: 0px;
+    padding: 0px;
+    display: flex; /* Changed from inline to flex for better layout control */
+  }
+  
+  #PreHeader ul li {
+    flex: 0 0 auto; /* Added flex properties for better spacing */
+  }
+  
+  #PreHeader ul li a {
+    width: 120px;
+    line-height: 30px;
+    font-size: 0.85rem;
+    padding: 0px 10px;
+    margin: 0px;
+    display: block;
+    text-align: center;
+    color: #fff; /* Changed color to white for neon look */
+    text-shadow: 0px 0px 2px #00fff0; /* Added neon text shadow */
+    border-left: 1px solid transparent; /* Removed black border, replaced with transparent for spacing */
+    /* Consider adding a hover effect with a neon border color for interactivity */
+  }
+  
+  .avatar {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 10px;
+    border: 2px solid #00fff0; /* Changed border color to neon */
+    box-shadow: 0px 0px 2px 1px #0f0; /* Modified shadow for neon effect */
+  }
+  
+  p.avatarBig {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .avatarBig img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    border: 4px solid #00fff0; /* Changed border color to neon */
+    box-shadow: 0px 0px 2px 1px #0f0; /* Modified shadow for neon effect */
+  }
+  
+  #PreHeader ul li:first-child a, footer ul li:first-child a, #MenuHeader ul li:first-child a {
+    border-left: none; /* Maintains removal of first item's left border */
+  }
+  
+  #PreHeader ul li a:hover, footer ul li a:hover, #MenuHeader ul li a:hover {
+    background-color: transparent; /* Removed hover background for cleaner neon look */
+    /* Consider adding a neon border or text effect on hover for interactivity */
+  }
+  
+  #LogoHeader {
+    width: 200px;
+    line-height: 7vh;
+    margin: 3vh 30px;
+    color: white;
+    font-weight: 800;
+    font-size: 1.5rem;
+    text-align: center;
+    border-radius: 30px;
+    /* Consider using a neon text shadow or gradient for the logo */
+    /* Consider removing the background color for a more layered effect */
+  }
+  
+  #MainHeader {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    height: 13vh;
+  }
+  
+  #MenuHeader ul {
+    margin: 0px 30px;
+    display: flex; /* Changed from inline to flex for better layout control */
+  }
+  
+  #MenuHeader ul li {
+    flex: 0 0 auto; /* Added flex properties for better spacing */
+  }
+  
+  #MenuHeader ul li a {
+    /* Apply similar styles as #PreHeader ul li a for a consistent look */
+    width: auto; /* Can adjust width based on menu item length */
+    line-height: 30px;
+    padding: 0px 15px; /* Adjust padding for spacing */
+    text-align: center;
+    color: #fff; /* Neon text color */
+    text-shadow: 0px 0px 2px #00fff0; /* Neon text shadow */
+  }
+  
+  footer {
+    width: 100%;
+    height: 18vh;
+    display: flex; /* Removed unnecessary properties */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background-color: #002244; /* Darker neon blue background */
+    border-top: 3vh solid #00fff0; /* Neon blue border instead of black */
+    color: #fff; /* White text color for readability */
+  }
+  footer ul {
+    display: flex; /* Changed from default inline display for better layout control */
+    justify-content: space-between; /* Distributes footer links evenly */
+    align-items: center; /* Aligns links vertically */
+    height: auto; /* Removed fixed height for better responsiveness */
+    padding: 0px 10%; /* Added padding for spacing */
+  }
+  
+  footer a {
+    width: auto; /* Removed fixed width for better responsiveness */
+    font-size: 1rem; /* Reduced font size for a cleaner look */
+    color: #fff; /* Neon text color */
+    text-align: center;
+    line-height: 1; /* Removed fixed line-height for better spacing */
+    text-decoration: none;
+    text-shadow: 0px 0px 2px #00fff0; /* Neon text shadow */
+    /* Consider adding a hover effect with a neon border or underline */
+  }
+  .formSession {
+    width: 100%; /* Changed fixed width to 100% for full-width form */
+    max-width: 600px; /* Added a maximum width for responsiveness */
+    margin: 0 auto; /* Centers the form horizontally */
+  }
+
+  #perfil {
+    width: 600px; /* Consider adjusting width based on your content */
+    margin: 20px auto;
+    padding: 25px; /* Consistent padding for all sides */
+    display: block;
+    background-color: #f2f2f2; /* Light gray background */
+    border-radius: 5px; /* Rounded corners for a sleek look */
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  }
+  
+  #perfil h2 {
+    font-size: 1.4rem;
+    line-height: 40px;
+    background-color: #e0e0e0; /* Slightly darker background for headings */
+    color: #333; /* Darker text color for better contrast */
+    margin-bottom: 30px;
+    padding: 10px 15px; /* Add some padding for spacing */
+    border-bottom: 1px solid #ddd; /* Subtle bottom border for separation */
+  }
+
+  .espaciado p {
+    width: 100%; /* Maintains full width */
+    line-height: 1.5; /* Adjusts line-height for better spacing */
+    font-size: 1rem; /* Consistent font size for readability */
+    color: #333; /* Darker text color for better contrast */
+    margin-bottom: 15px; /* Adds space between paragraphs */
+  }
+  
+  .espaciado p.bio {
+    line-height: 1.2; /* Slightly smaller line-height for biography text */
+    font-size: 0.9rem; /* Slightly smaller font size for biography text */
+    margin-bottom: 10px; /* Adjusts spacing for bios */
+    /* Consider adding a different color or style for bios if needed */
+  }
+
+  #formulario {
+    width: 600px;
+    height: auto;
+    overflow-y: scroll;
+    margin: 20px auto; /* Added margin for spacing */
+    padding: 20px; /* Added padding for content spacing */
+    display: block;
+    background-color: #f2f2f2; /* Light gray background */
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  }
+  
+  .succes, .error {
+    width: 600px; /* Maintains full width */
+    font-weight: bold; /* Adjusted font weight */
+    line-height: 40px;
+    text-align: center;
+    background-color: #fff; /* White background */
+    font-size: 1rem; /* Consistent font size */
+    text-transform: uppercase; /* Maintains uppercase */
+    /* Consider removing text shadow for a cleaner look */
+    /* Consider adding a thin border for separation */
+  }
+  
+  .succes {
+    color: #23b523; /* Green color for success */
+  }
+  
+  .error {
+    color: #ff0000; /* Red color for error */
+  }
+  
+
+  #PaginaActual {
+    width: 50px;
+    padding: 0px;
+    margin: 5vh 0px;
+    line-height: 3vh;
+    font-weight: 600;
+    font-size: 1.2rem;
+    text-align: center;
+} 
+form textarea, form input {
+    width: 90%; /* Maintains width for most inputs */
+    margin: 10px 5% 15px; /* Adjusted margins for spacing */
+    padding: 10px 15px; /* Adjusted padding for better spacing and usability */
+    border: 1px solid #ddd; /* Light gray border */
+    border-radius: 5px; /* Rounded corners */
+    font-family: inherit; /* Inherit font family from parent element */
+    font-size: 1rem; /* Consistent font size */
+    line-height: 1.5; /* Increased line-height for better readability */
+    /* Consider adding a subtle box-shadow on focus for interactivity */
+  }
+  
+  form textarea:focus-visible, form input:focus-visible {
+    border: 1px solid #ccc; /* Slightly darker border on focus */
+    outline: 0px; /* Maintains outline removal */
+  }
+  
+  form textarea {
+    height: 80px; /* Maintains height for textarea */
+  }
+  
+  input[type="submit"] {
+    border: none; /* Maintains no border */
+    font-size: 1rem; /* Adjusted font size for consistency */
+    background-color: #23b523; /* Green color for submit button */
+    color: white; /* White text color */
+    padding: 10px 20px; /* Adjusted padding for better button size */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Indicates clickable element */
+    /* Consider adding a hover effect with a slightly darker green color */
+  }
+  
+
+
+  input[type="submit"]:hover {
+    background-color: rgb(56, 92, 93); /* Darker green on hover for submit button */
+  }
+  
+  input[type="file"] {
+    background-color: #eee; /* Lighter background for file input */
+    padding: 10px 15px; /* Consistent padding for better usability */
+  }
+  
+  label {
+    display: block;
+    text-align: left;
+    margin: 10px 0px 5px 10px; /* Adjusted margins for spacing */
+    font-weight: bold; /* Adjusted font weight */
+    color: #333; /* Darker text color for better contrast */
+    font-size: 0.9rem; /* Maintains font size consistency */
+  }
+  
+  #lista, #productos {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    overflow-x: scroll; /* Maintains horizontal scroll */
+    overflow-y: hidden; /* Maintains hidden vertical overflow */
+    justify-content: space-around;
+  }
+  
+  #productos ul {
+    display: flex;
+    flex-direction: column;
+    width: 20%; /* Maintains 20% width */
+    min-width: 280px; /* Maintains minimum width for product details */
+    height: auto;
+    margin: 20px 10px; /* Maintains margins for spacing */
+    padding: 15px; /* Maintains padding for content spacing */
+    background-color: #fff; /* White background */
+    justify-content: space-around; /* Maintains spacing within product details */
+    border-radius: 5px; /* Rounded corners for a modern look */
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  }
+
+  #productos ul li img {
+    max-height: 210px; /* Maintains max-height for images */
+    border-radius: 10px; /* Adjusted border-radius for rounded corners */
+    /* Consider adding a subtle drop shadow for depth */
+  }
+
+  .comprar {
+    background-color: #23b523; /* Green color for buy button */
+    color: white; /* White text color */
+    padding: 10px 20px; /* Adjusted padding for better button size */
+    border: none; /* Removed border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Indicates clickable element */
+    transition: background-color 0.2s ease-in-out; /* Smooth hover effect */
+  }
+  
+  .comprar:hover {
+    background-color: #4CAF50; /* Darker green on hover */
+  }
+
+  #chat {
+    width: 80%;
+    min-width: 600px; /* Maintains minimum width */
+    height: 90vh; /* Adjusted height to viewport height */
+    margin: auto;
+    background-color: #f2f2f2; /* Light gray background */
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    overflow-y: scroll; /* Enables vertical scrolling */
+    position: relative;
+    font-size: 1rem; /* Maintains font size */
+  }
+  
+  #chat h2 {
+    width: 100%;
+    height: 8%; /* Adjusted height for chat header */
+    background-color: #23b523; /* Green color for chat header */
+    color: white; /* White text color */
+    font-size: 1.2rem; /* Adjusted font size for heading */
+    text-align: center; /* Center-aligned text */
+    padding: 10px; /* Added padding for spacing */
+    border-bottom: 1px solid #ddd; /* Subtle bottom border */
+  }
+  
+  #chat label {
+    width: 100%; /* Full width for labels */
+    margin: 10px 0px 5px 10px; /* Adjusted margins for spacing */
+    color: #333; /* Darker text color for better contrast */
+  }
+  #chat input {
+    width: 80%; /* Adjusted width for better balance */
+    min-width: 300px; /* Adjusted minimum width for usability */
+    line-height: 30px; /* Adjusted line-height for better text placement */
+    padding: 10px 15px; /* Consistent padding for better usability */
+    margin: 10px auto; /* Adjusted margins for spacing */
+    font-size: 1rem; /* Maintains font size */
+    border: 1px solid #ddd; /* Lighter border */
+    border-radius: 5px; /* Rounded corners */
+    /* Consider removing border-radius for a more modern text field look */
+  }
+  
+  #chat input:focus-visible {
+    border: 1px solid #23b523; /* Green border on focus (matches button) */
+    box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.2); /* Subtle blue shadow on focus */
+    outline: none;
+  }
+  #mensajes {
+    width: 100%; /* Full width for chat message container */
+    height: calc(100% - 8% - 80px); /* Adjusted height based on chat header and input field */
+    overflow-x: scroll; /* Maintains horizontal scrolling */
+    padding: 15px; /* Consistent padding for content spacing */
+    background-color: #f2f2f2; /* Light gray background */
+    box-shadow: none; /* Removed inset shadow for a cleaner look */
+  }
+  #chat .mensaje {
+    width: fit-content; /* Dynamic width for messages */
+    max-width: 80%; /* Limit maximum width to prevent overflow */
+    padding: 10px 15px; /* Consistent padding for message content */
+    margin: 5px 0px; /* Adjusted margins for spacing */
+    background-color: #fff; /* White background for messages */
+    line-height: 1.5; /* Increased line-height for readability */
+    display: inline-block; /* Allow messages to wrap next to each other */
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    /* Consider using a different color scheme for sent vs. received messages */
+  }
+
+  .github {
+    width: 200px; /* Adjusted width for better balance */
+    height: 40px; /* Maintains height */
+    background-color: #23b523; /* Green color for button */
+    color: white; /* White text color */
+    border: none; /* Removed border */
+    border-radius: 5px; /* Rounded corners */
+    font-size: 1rem; /* Adjusted font size for consistency */
+    line-height: 40px; /* Maintains line-height for button text alignment */
+    text-align: center; /* Maintains centered text */
+    cursor: pointer; /* Indicates clickable element */
+    transition: background-color 0.2s ease-in-out; /* Smooth hover effect */
+  }
+  
+  .github:hover {
+    background-color: #4CAF50; /* Darker green on hover */
+  }
+/* Scrollbar styles */
+::-webkit-scrollbar {
+    width: 8px; /* Adjusted width for a thinner scrollbar */
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background-color: #f2f2f2; /* Light gray background for track */
+    border-radius: 5px; /* Rounded corners */
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background-color: #ddd; /* Light gray background for handle */
+    border-radius: 5px; /* Rounded corners */
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: #ccc; /* Slightly darker gray on hover */
+  }
+  
+

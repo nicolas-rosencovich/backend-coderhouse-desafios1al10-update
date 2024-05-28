@@ -1,31 +1,37 @@
 <header>
-    <div id="PreHeader">
-        {{> submenu}}
-    </div>
-    <div id="MainHeader">
-        <div id="LogoHeader">Lista del Sol</div>
-        <div id="MenuHeader">{{>menu}}</div>
-    </div>
+  <div id="PreHeader">
+    {{> submenu}}
+  </div>
+  <div id="MainHeader">
+    <div id="LogoHeader">Lista del Sol</div>
+    <div id="MenuHeader">{{>menu}}</div>
+  </div>
 </header>
 <main>
-    <div id="container">
-        <h1>Viendo Carrito: {{carrito._id}}</h1>
-        <div id="productos">
-            
-            {{#each carrito.products}}
-                <ul>
-                    <li><h3>{{productId.title}}</h3></li>
-                    <li><img src={{productId.thumbnail}} /></li>
-                    <li><h4>Price: ${{productId.price}}</h4></li>
-                    <li>Cantidad :{{quantity}}</li>
-                </ul>
-            {{/each}}
-        </div>
+  <div id="container">
+    <h1>Viendo Carrito: {{carrito._id}}</h1>
+    <div id="productos">
+      {{#if carrito.products.length}}
+        <ul>
+          {{#each carrito.products}}
+            <li>
+              <h3><a href="/products/{{productId._id}}">{{productId.title}}</a></h3>
+              <img src={{productId.thumbnail}} />
+              <h4>Price: ${{productId.price}}</h4>
+              <li>Cantidad: {{quantity}} </li>
+            </li>
+          {{/each}}
+        </ul>
+        <p>Total: ${{ sum (carrito.products.map(producto => producto.price * producto.quantity)) }}</p>
+        <button id="vaciar-carrito">Vaciar Carrito</button>
+      {{else}}
+        <p>El carrito está vacío.</p>
+      {{/if}}
     </div>
+  </div>
 </main>
 <footer>
-    <ul>
-        <li><a href="/products">Seguir Comprando</a></li>
-    </ul>
+  <ul>
+    <li><a href="/products">Seguir Comprando</a></li>
+  </ul>
 </footer>
-

@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Redirigir</title>
-    <meta charset="UTF-8">
-    <script type="text/javascript">
-        function redirect() {
-            window.location = "/login";
-        }
-        window.onload = redirect;
-    </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Redireccionamiento</title>
+  <meta charset="UTF-8">
+  <script>
+    function redirect() {
+      window.location.replace("/login"); // Use replace to prevent back button issues
+    }
+    window.onload = redirect;
+  </script>
 </head>
 <body>
-    <!-- Contenido de tu página -->
+  <p>Serás redirigido a la página de login en breve.</p>
 </body>
 </html>

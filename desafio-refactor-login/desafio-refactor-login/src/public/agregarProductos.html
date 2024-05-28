@@ -1,73 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="../img/icon.ico">
-    <link href="./css/estilo.css" rel="stylesheet" />
-    <title>Formulario de ingreso de productos</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/x-icon" href="../img/icon.ico">
+  <link href="./css/estilo.css" rel="stylesheet" />
+  <title>Lista del Sol - Formulario de Productos</title>
 </head>
 <body>
-    <header>
-        <div id="PreHeader">
-            <ul>
-                <li><a href="/registro">Registro</a></li>
-                <li><a href="/login">Login</a></li>
-                <li><a href="/perfil">Perfil</a></li>
-                <li><a href="/api/session/registro">Logout</a></li>
-            </ul>
+  <header class="header">
+    <nav class="nav">
+      <ul>
+        <li><a href="/registro">Registro</a></li>
+        <li><a href="/login">Login</a></li>
+        <li><a href="/perfil">Perfil</a></li>
+        <li><a href="/api/session/logout">Logout</a></li>
+      </ul>
+    </nav>
+    <h1 class="logo">Lista del Sol</h1>
+    <nav class="nav main-nav">
+      <ul>
+        <li><a href="/home">Inicio</a></li>
+        <li><a href="/products">Productos</a></li>
+        <li><a href="/chat">Chat WebSocket</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main class="main">
+    <section class="product-form">
+      <h1>Formulario para ingresar productos</h1>
+      <form action="http://localhost:8080/api/products/" method="post" enctype="multipart/form-data">
+        <div class="form-group">
+          <label for="title">Título</label>
+          <input type="text" id="title" name="title" placeholder="Ingresar título" required />
         </div>
-        <div id="MainHeader">
-            <div id="LogoHeader">Lista del Sol</div>
-            <div id="MenuHeader">
-                <ul>
-                    <li>
-                        <a href="/home">Inicio</a>
-                    </li>
-                    <li>
-                        <a href="/products">Productos</a>
-                    </li>
-                    <li>
-                        <a href="/chat" >Chat WebSocket</a>
-                    </li>
-                
-                </ul>
-            </div>
+        <div class="form-group">
+          <label for="description">Descripción</label>
+          <textarea type="text" id="description" name="description" placeholder="Descripción" required></textarea>
         </div>
-    </header>
-    <main>
-        <div id="container">
-            <h1>Formulario para ingresar productos</h1>
-            <div id="formulario">   
-                <form  action="http://localhost:8080/api/products/" method="post" enctype="multipart/form-data" >
-                    <label for="title">Title</label>
-                    <input type="text" id="title" name="title" placeholder="Ingresar Title" required />
-                    
-                    <label for="description">Description</label>
-                    <textarea type="text" id="description" name="description" placeholder="Description" required></textarea>
-                    
-                    <label for="price">Price</label>
-                    <input type="number" id="price" name="price" required />
-                    
-                    <label for="code">Code</label>
-                    <input type="text" id="code" name="code" required />
-                    
-                    <label for="stock">Stock</label>
-                    <input type="number" id="stock" name="stock"  required />
-        
-                    <label for="thumbnail">Foto</label>
-                    <input type="file" id="thumbnail" name="thumbnail" />
-                    
-                    <input type="submit" value="Enviar"  required>
-                </form>
-            </div>
-            <!-- <h2>Lista de productos</h2> -->
-            <div id="lista"></div>
+        <div class="form-group">
+          <label for="price">Precio</label>
+          <input type="number" id="price" name="price" required />
         </div>
-    </main>
-    <footer>
-        
+        <div class="form-group">
+          <label for="code">Código</label>
+          <input type="text" id="code" name="code" required />
+        </div>
+        <div class="form-group">
+          <label for="stock">Stock</label>
+          <input type="number" id="stock" name="stock" required />
+        </div>
+        <div class="form-group">
+          <label for="thumbnail">Imagen</label>
+          <input type="file" id="thumbnail" name="thumbnail" />
+        </div>
+        <button type="submit">Enviar</button>
+      </form>
+    </section>
+    <section class="product-list" id="lista"></section>
+  </main>
+  <footer class="footer">
     </footer>
-    <script src="./js/codigo.js" type="text/javascript"></script>
+  <script src="./js/codigo.js" type="text/javascript"></script>
 </body>
 </html>

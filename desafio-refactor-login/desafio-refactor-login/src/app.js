@@ -27,7 +27,7 @@ app.use(session({
     saveUninitialized:true,
     store:MongoStore.create({
         ttl:3600,
-        mongoUrl:"mongodb+srv://gonzalof:Coder098@cluster0.pt1wq7n.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0",
+        mongoUrl:"mongodb+srv://",
         dbName:"ecommerce",
         collectionName:"sessions"
     })
@@ -92,7 +92,7 @@ io.on("connection", socket => {
 
 const connDB = async () => {
     try {
-        await mongoose.connect("mongodb+srv://gonzalof:Coder098@cluster0.pt1wq7n.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0",
+        await mongoose.connect("mongodb+srv://",
         {dbName:"ecommerce"});
         console.log("DB MONGO ONLINE");
     } catch (error) {

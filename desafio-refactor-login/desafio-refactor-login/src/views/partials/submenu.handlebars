@@ -1,10 +1,22 @@
-<ul>
-    {{#if login}}
-        {{#if login.profile._json.avatar_url}}<li><img src="{{login.profile._json.avatar_url}}" alt="GitHub Avatar" class="avatar"></li>{{/if}}
-        <li><a href="/perfil">Perfil</a></li>
-        <li><a href="/api/sessions/logout">Logout</a></li>
-    {{else}}
-        <li><a href="/registro">Registro</a></li>
-        <li><a href="/login">Login</a></li>
+<ul class="user-nav">
+  {{#if login}}
+    {{#if login.profile._json.avatar_url}}
+      <li class="user-avatar">
+        <img src="{{login.profile._json.avatar_url}}" alt="Avatar" />
+      </li>
     {{/if}}
+    <li>
+      <a href="/perfil">Perfil</a>
+    </li>
+    <li>
+      <a href="/api/sessions/logout">Salir</a>
+    </li>
+  {{else}}
+    <li>
+      <a href="/registro">Registrarse</a>
+    </li>
+    <li>
+      <a href="/login">Iniciar sesión</a>
+    </li>
+  {{/if}}
 </ul>

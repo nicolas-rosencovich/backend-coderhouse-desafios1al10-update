@@ -1,34 +1,57 @@
-<header>
-    <div id="PreHeader">
-        {{> submenu}}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Lista del Sol - Registro</title>
+  <link rel="stylesheet" href="/css/styles.min.css">  </head>
+<body>
+  <header>
+    <div id="pre-header">
+      {{> submenu}}
     </div>
-    <div id="MainHeader">
-        <div id="LogoHeader">Lista del Sol</div>
-        <div id="MenuHeader">{{>menu}}</div>
+    <div id="main-header">
+      <a href="/" class="logo">
+        <img src="/images/logo.svg" alt="Lista del Sol">  </a>
+      <nav class="navigation">
+        {{> menu}}
+      </nav>
     </div>
-</header>
-<main>
-    <div id="container">
-        <h1>Registro de usuarios</h1>
-        {{#if error}}
-            <div class="error">{{error}}</div>
-            {{else}}
-            <h2>Por favor ingresar sus datos en el formulario</h2>
-        {{/if}} 
-        <form class="formSession" action="/api/sessions/registro" method="post">
-            <input type="text" name="nombre" placeholder="Nombre">
-            <input type="text" name="apellido" placeholder="Apellido">
-            <input type="number" name="edad" placeholder="Edad">
-            <input type="email" name="email" placeholder="Correo Electrónico">
-            <input type="password" name="password" placeholder="Password">
-            <input type="text" name="web" value="web" hidden>
-            <input type="submit" value="Registrar">
-        </form>
-    </div>
-</main>
-<footer>
+  </header>
+  <main>
+    <section class="registration-form">
+      <h1>Registro de Usuarios</h1>
+      {{#if error}}
+        <div class="error-message">{{error}}</div>  {{/if}}
+      <form class="form" action="/api/sessions/registro" method="post">
+        <div class="form-group">
+          <label for="nombre">Nombre:</label>
+          <input type="text" name="nombre" id="nombre" placeholder="Ingrese su nombre" required>  </div>
+        <div class="form-group">
+          <label for="apellido">Apellido:</label>
+          <input type="text" name="apellido" id="apellido" placeholder="Ingrese su apellido" required>
+        </div>
+        <div class="form-group">
+          <label for="edad">Edad:</label>
+          <input type="number" name="edad" id="edad" placeholder="Ingrese su edad" min="18" required>  </div>
+        <div class="form-group">
+          <label for="email">Correo Electrónico:</label>
+          <input type="email" name="email" id="email" placeholder="Ingrese su email" required>
+        </div>
+        <div class="form-group">
+          <label for="password">Contraseña:</label>
+          <input type="password" name="password" id="password" placeholder="Cree una contraseña" required>
+        </div>
+        <div class="form-group">
+          <input type="submit" value="Registrarse">
+        </div>
+      </form>
+    </section>
+  </main>
+  <footer>
     <ul>
-        <li><a href="/" title="Home Page">Formulario</a></li>
-        <li><a href="/chat" title="Chat Online">Chat WebSocket</a></li>
+      <li><a href="/" title="Home Page">Formulario</a></li>
+      <li><a href="/chat" title="Chat Online">Chat WebSocket</a></li>
     </ul>
-</footer>
+  </footer>
+</body>
+</html>
